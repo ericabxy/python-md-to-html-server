@@ -46,7 +46,7 @@ class md_to_html_SimpleHTTPRequestHandler(SimpleHTTPRequestHandler):
         )  # url decode, strip query params for file check
         if (
             self.MarkdownIt_obj
-            and self.url_dc_path.endswith(".md")
+            and self.url_dc_path.endswith((".md", ".markdown"))
             and os.path.exists(os.path.join(self.directory, f".{self.url_dc_path}"))
         ):  # check for markdown file request
             in_file_path = os.path.join(self.directory, f".{self.url_dc_path}")
